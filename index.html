@@ -2,15 +2,45 @@
   <head>
     <title>Blackjack</title>
     <link href="styles/app.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="app/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="app/bower_components/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/main.css" rel="stylesheet" type="text/css" media="screen">
   </head>
   <body>
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>            
+          </div>
+          <div class="modal-body">
+            <h1>You Won</h1>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+          <blockquote>
+            <h1>BlackJack</h1>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    
     <script src="lib/jquery.js"></script>
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
+    <script src="app/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
     <script src="compiled/client/models/Card.js"></script>
     <script src="compiled/client/collections/Hand.js"></script>
     <script src="compiled/client/collections/Deck.js"></script>
+    
     <script src="compiled/client/models/App.js"></script>
 
     <script src="compiled/client/views/CardView.js"></script>

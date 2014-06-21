@@ -6,6 +6,23 @@ class window.Hand extends Backbone.Collection
 
   hit: ->
     @add(@deck.pop()).last()
+    if (@scores().every (s) -> s > 21)
+      @trigger 'bust'
+      return
+    do @act
+
+  stand: ->
+    @trigger 'standEvent', @isDealer
+
+  act: ->
+    if @isDealer 
+      if (@scores().every ( s ) -> s < 17 )
+        do @hit
+      else 
+        do @stand
+
+  bet: (val)->
+    @trigger 'betEvent', val
 
   scores: ->
     # The scores are an array of potential scores.
