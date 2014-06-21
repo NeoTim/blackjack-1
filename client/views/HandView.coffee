@@ -13,15 +13,12 @@ class window.HandView extends Backbone.View
     @collection.on 'add remove change', => @render()
     @render()
 
-
-
   render: ->
     @$el.children().detach()
     @$el.html @template @collection
     @$el.append @collection.map (card) ->
       new CardView(model: card).$el
     @$('.score').text cardToDisplay @collection.scores()
-    # @$('.score').text @collection.scores()
-    # if @collection.scores()[0] > 21
-    #   @$('.score').css('color', 'red');
+          
+    # @$('.score').text @collection.scores()[0]
 
