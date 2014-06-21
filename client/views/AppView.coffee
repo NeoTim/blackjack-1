@@ -1,12 +1,19 @@
 class window.AppView extends Backbone.View
 
   template: _.template '
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-8 col-md-offset-2">
       <div class="panel">
-        <button class="hit-button btn btn-info">Hit</button> <button class="stand-button btn btn-warning">Stand</button>
+        <div class="btn-group btn-group-justified">
+          <div class="btn-group">
+            <button class="hit-button btn btn-info">Hit</button>
+          </div>
+          <div class="btn-group">
+            <button class="stand-button btn btn-warning">Stand</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-8 col-md-offset-2">
       <div class="panel">
         <div class="player-hand-container"></div>
       </div>
